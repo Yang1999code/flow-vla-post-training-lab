@@ -1,0 +1,34 @@
+{
+  "benchmark": "LIBERO-10 task 9",
+  "task": "put the yellow and white mug in the microwave and close it",
+  "protocol": {
+    "held_out_initial_states": "10-19",
+    "environment_seed": 20260926,
+    "replan_steps": 5,
+    "max_steps": 520,
+    "note": "Aggregate, de-identified metrics only. No raw trajectories are included."
+  },
+  "fixed_noise_20260926": [
+    {"method": "base_pi0_libero", "successes": 5, "trials": 10, "mean_steps": 416.6, "mean_success_steps": 313.2, "mean_jerk": 0.13152},
+    {"method": "flow_tpo20", "successes": 9, "trials": 10, "mean_steps": 292.9, "mean_success_steps": 267.67, "mean_jerk": 0.10848},
+    {"method": "flow_opd20", "successes": 9, "trials": 10, "mean_steps": 298.1, "mean_success_steps": 273.44, "mean_jerk": 0.11334},
+    {"method": "conservative_opd_anchor_1", "successes": 7, "trials": 10, "mean_steps": 344.5, "mean_success_steps": 269.29, "mean_jerk": 0.14345},
+    {"method": "flow_tpo30", "successes": 8, "trials": 10, "mean_steps": 323.6, "mean_success_steps": 274.5, "mean_jerk": 0.11794},
+    {"method": "quality_tpo12", "successes": 7, "trials": 10, "mean_steps": 370.0, "mean_success_steps": 305.71, "mean_jerk": 0.13435}
+  ],
+  "additional_noise_check": {
+    "flow_noise_seed": 101,
+    "method": "flow_tpo20",
+    "successes": 8,
+    "trials": 10,
+    "mean_steps": 339.2,
+    "mean_success_steps": 294.0,
+    "mean_jerk": 0.10808,
+    "interpretation": "Shows a positive signal but also sampling sensitivity."
+  },
+  "limitations": [
+    "This is not a cross-task or real-robot claim.",
+    "A third, partial noise check showed instability and is not pooled here.",
+    "The Flow Matching loss is a surrogate preference score, not an exact likelihood."
+  ]
+}

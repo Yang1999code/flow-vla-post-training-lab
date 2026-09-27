@@ -1,0 +1,18 @@
+{
+  "dataset_description": "De-identified aggregate statistics from 50 successful bimanual click_bell demonstration episodes.",
+  "source_frequency_hz": 15,
+  "action_dim": 14,
+  "dct_reconstruction": {
+    "chunk_length": 50,
+    "original_jerk_mean": 0.0783932,
+    "keep_6": {"compression_ratio": 8.333, "mse_mean": 0.0000341928, "max_abs_error": 0.1273621},
+    "keep_12": {"compression_ratio": 4.167, "mse_mean": 0.0000053925, "max_abs_error": 0.0416414},
+    "keep_25": {"compression_ratio": 2.0, "mse_mean": 0.0000007473, "max_abs_error": 0.0140097}
+  },
+  "horizon_audit": [
+    {"horizon_steps": 15, "open_loop_seconds_at_15hz": 1.0, "keep_8_max_abs_error": 0.0182285},
+    {"horizon_steps": 32, "open_loop_seconds_at_15hz": 2.1333, "keep_16_max_abs_error": 0.0251517},
+    {"horizon_steps": 50, "open_loop_seconds_at_15hz": 3.3333, "keep_25_max_abs_error": 0.0140097}
+  ],
+  "interpretation": "Representation compression is feasible. This is not a trained FAST policy result."
+}
